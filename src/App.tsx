@@ -2,20 +2,20 @@ import { Suspense, useState } from 'react'
 import Nav from './Components/Nav'
 import Hero from './Components/Hero'
 import TechnologySection from './Components/TechnologySection'
+import type { ITechnology } from './Components/Types/Type'
 
 
-
-function App() {
-
-
-  const technologyPromise = async () => {
+const technologyPromise = async () => {
     const response = await fetch('/data.json')
     return response.json()
   }
 
   const dataPromise = technologyPromise()
 
-  const [stack, setStack] = useState<string[]>([])
+function App() {
+
+
+  const [stack, setStack] = useState<ITechnology[]>([])
 
   return (
     <>
