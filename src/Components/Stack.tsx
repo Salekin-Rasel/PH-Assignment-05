@@ -15,7 +15,7 @@ const Stack = ({ stack, setStack }: StackProps) => {
         setStack([]);
     }
     return (
-        <div>
+        <div className="container mx-auto p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             {/* head */}
             <div>
                 <h1 className="text-3xl font-bold text-black">Your Stack</h1>
@@ -34,21 +34,21 @@ const Stack = ({ stack, setStack }: StackProps) => {
                         </div>
                         <button
                             onClick={() => handleRemoveFromStack(technology)}
-                            className="flex-shrink-0 rounded-full bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                            className="flex-shrink-0  text-red-300 text-2xl font-bold hover:text-red-500 transition-colors mx-2"
                         >
-                            Remove
+                            X
                         </button>
                     </div>
                 ))}
             </div>
             {/* clear stack button */}
             {stack.length > 0 && (
-                <div className="mt-4">
-                    <button
+                <div className="mt-4 flex items-center justify-center gap-2">
+                    <button 
                         onClick={handleClearStack}
-                        className="rounded-full bg-gray-500 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                        className="btn btn-wide border-red-200 shadow-md hover:shadow-md transition-shadow text-red-500 font-bold hover:bg-red-100 hover:border-red-300"
                     >
-                        Clear Stack
+                        Remove All
                     </button>
                 </div>
             )}
