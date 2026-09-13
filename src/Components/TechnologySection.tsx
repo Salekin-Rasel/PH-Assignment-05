@@ -3,11 +3,17 @@ import type { ITechnology } from "./Types/Type";
 
 interface TechnologySectionProps {
     dataPromise: Promise<ITechnology[]>;
+    stack: string[];
+    setStack: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const TechnologySection = ({ dataPromise }: TechnologySectionProps) => {
+const TechnologySection = ({ dataPromise, stack, setStack }: TechnologySectionProps) => {
     
+    const handleAddToStack = (technology: ITechnology) => {
+        setStack([...stack, technology.name]);
+    };
     const data = use(dataPromise);
+    
 
     return (
         <section className="container mx-auto">
@@ -65,7 +71,10 @@ const TechnologySection = ({ dataPromise }: TechnologySectionProps) => {
                             </div>
 
                             {/* addToStack Button */}
-                            <button className="w-full rounded-xl bg-black py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors ">
+                            <button 
+                                onClick={() => handleAddToStack(technology)}
+                                className="w-full rounded-xl bg-black py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors "
+                            >
                                 Add to Stack
                             </button>
                         </div>

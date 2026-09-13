@@ -15,13 +15,15 @@ function App() {
 
   const dataPromise = technologyPromise()
 
+  const [stack, setStack] = useState<string[]>([])
+
   return (
     <>
     
       <Nav />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
-        <TechnologySection dataPromise={dataPromise} />
+        <TechnologySection dataPromise={dataPromise} stack={stack} setStack={setStack} />
       </Suspense>
     </>
   )
