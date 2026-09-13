@@ -27,7 +27,7 @@ function App() {
       <Nav />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
-        <div className="container mx-auto flex flex-col lg:flex-row gap-8 mt-6">
+        <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 mt-6">
     <div className="lg:w-3/4">
         <TechnologySection dataPromise={dataPromise} stack={stack} setStack={setStack} />
     </div>
