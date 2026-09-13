@@ -4,6 +4,7 @@ import Hero from './Components/Hero'
 import TechnologySection from './Components/TechnologySection'
 import type { ITechnology } from './Components/Types/Type'
 import Stack from './Components/Stack'
+import InfoSection from './Components/InfoSection'
 
 
 const technologyPromise = async () => {
@@ -33,6 +34,7 @@ function App() {
     </div>
 </div>
       </Suspense>
+      <InfoSection />
     </>
   )
 }
