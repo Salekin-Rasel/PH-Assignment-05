@@ -3,17 +3,17 @@ import type { ITechnology } from "./Types/Type";
 
 interface TechnologySectionProps {
     dataPromise: Promise<ITechnology[]>;
-    stack: string[];
-    setStack: React.Dispatch<React.SetStateAction<string[]>>;
+    stack: ITechnology[]; // 
+    setStack: React.Dispatch<React.SetStateAction<ITechnology[]>>; // 
 }
 
 const TechnologySection = ({ dataPromise, stack, setStack }: TechnologySectionProps) => {
     
     const handleAddToStack = (technology: ITechnology) => {
-        setStack([...stack, technology.name]);
+        setStack([...stack, technology]); 
     };
+
     const data = use(dataPromise);
-    
 
     return (
         <section className="container mx-auto">
@@ -32,7 +32,11 @@ const TechnologySection = ({ dataPromise, stack, setStack }: TechnologySectionPr
 
                 {/* Main Cards*/}
                 <div className="grid grid-cols-3 gap-2">
-                    {data.map((technology) => (
+                    {data.map((technology) => {
+                        
+                        const isAdded = stack.some(item => item.name === technology.name);
+                        
+                        return (
                         <div 
                             key={technology.name} 
                             className="flex flex-col justify-between rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow"
@@ -72,13 +76,18 @@ const TechnologySection = ({ dataPromise, stack, setStack }: TechnologySectionPr
 
                             {/* addToStack Button */}
                             <button 
+                                disabled={isAdded} // 
                                 onClick={() => handleAddToStack(technology)}
-                                className="w-full rounded-xl bg-black py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors "
+                                className={`w-full rounded-xl py-3 text-sm font-semibold text-white transition-colors ${
+                                    isAdded 
+                                    ? "bg-gray-300 text-gray-500 cursor-not-allowed" 
+                                    : "bg-black hover:bg-slate-800"
+                                }`} // 
                             >
-                                Add to Stack
+                                {isAdded ? "Selected" : "Add to Stack"} 
                             </button>
                         </div>
-                 ))}
+                    )})}
                 </div>
 
               </div>
