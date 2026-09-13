@@ -1,32 +1,65 @@
-# React + TypeScript + Vite
+# 🚀 [Developer Stack]
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<p align="center">
+  <img src="https://shields.io" alt="stars" />
+  <img src="https://shields.io" alt="forks" />
+  <img src="https://shields.io" alt="license" />
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>Build Your Ideal Developer Stack!</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📝 Description
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[This is the project where you can stack and decide your ideal developer technologies.]
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🛠️ Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+This project is built using a modern, efficient development stack:
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+*   **Frontend Ecosystem:** 🧪 [React 19](https://react.dev) / ⚡ [Vite](https://vite.dev)
+*   **Language Variant:** 📘 [TypeScript](https://typescriptlang.org) (Strictly Typed)
+*   **Styling Architecture:** 🎨 [Tailwind CSS](https://tailwindcss.com) (Responsive Grid Utilities)
+
+
+---
+
+## ✨ Key Features
+
+*   **⚡ Async Stream Loading**
+
+*   **🛠️ Interactive Stack Customization** 
+
+*   **📱 Clean UI**
+
+---
+
+## ✨ Q&A
+
+i. JSX is a version of javaScript where we can use html.
+
+ii. props immutable but state can be changed.
+
+iii. useState adds reactive state variable to functional components. we use it in app.tsx.
+
+iv. connects components with external system. helps to do work like data fetching. we need it to fetch promises.
+
+v. it helps react to uniquely identify each items.
+
+vi. changing components based on bolean or state condition.
+
+vii. parent pass directly to child using props. child updates the props.
+
+---
+
+## 🚀 Getting Started
+---
+
+<p align="center">
+  Made with 💖 by <a href="https://github.com">[Salekin]</a>
+</p>
