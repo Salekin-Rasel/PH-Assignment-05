@@ -1,5 +1,6 @@
 import { use } from "react";
 import type { ITechnology } from "./Types/Type";
+import { toast } from "react-toastify";
 
 interface TechnologySectionProps {
     dataPromise: Promise<ITechnology[]>;
@@ -11,6 +12,7 @@ const TechnologySection = ({ dataPromise, stack, setStack }: TechnologySectionPr
     
     const handleAddToStack = (technology: ITechnology) => {
         setStack([...stack, technology]); 
+        toast.success(`${technology.name} added to stack successfully!`);
     };
 
     const data = use(dataPromise);

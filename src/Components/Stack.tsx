@@ -1,4 +1,5 @@
 import type { ITechnology } from "./Types/Type";
+import { toast } from "react-toastify";
 
 interface StackProps {
     stack: ITechnology[];
@@ -9,10 +10,12 @@ const Stack = ({ stack, setStack }: StackProps) => {
 
     const handleRemoveFromStack = (technology: ITechnology) => {
         setStack(stack.filter((item) => item.name !== technology.name));
+        toast.warn(`${technology.name} Removed from stack!`);
     }
 
     const handleClearStack = () => {
         setStack([]);
+         toast.warn(`Everything removed!`);
     }
     return (
         <div className="container mx-auto p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">

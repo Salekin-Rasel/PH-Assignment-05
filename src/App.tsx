@@ -6,6 +6,7 @@ import type { ITechnology } from './Components/Types/Type'
 import Stack from './Components/Stack'
 import InfoSection from './Components/InfoSection'
 import Footer from './Components/Footer'
+import { ToastContainer } from 'react-toastify'
 
 
 const technologyPromise = async () => {
@@ -37,6 +38,7 @@ function App() {
       </Suspense>
       <InfoSection />
       <Footer/>
+      <ToastContainer/>
     </>
   )
 }
